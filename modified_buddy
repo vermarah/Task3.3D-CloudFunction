@@ -1,0 +1,44 @@
+int boardLed = D7;
+
+void setup() {
+    Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", myHandler);
+    pinMode(boardLed,OUTPUT);
+}
+
+void loop() {
+
+}
+
+void myHandler(const char *event, const char *data)
+{
+    if (strcmp(data,"wave")==0) {
+        digitalWrite(boardLed, HIGH);
+        delay(400);
+        digitalWrite(boardLed, LOW);
+        delay(400);
+        digitalWrite(boardLed, HIGH);
+        delay(400);
+        digitalWrite(boardLed, LOW);
+        delay(400);
+        digitalWrite(boardLed, HIGH);
+        delay(400);
+        digitalWrite(boardLed, LOW);
+        delay(400);
+
+    }
+    
+    else if(strcmp(data,"pat")==0) {
+        digitalWrite(boardLed, HIGH);
+        delay(200);
+        digitalWrite(boardLed, HIGH);
+        delay(200);
+        digitalWrite(boardLed, HIGH);
+        delay(200);
+        digitalWrite(boardLed, LOW);
+        delay(200);
+        digitalWrite(boardLed, LOW);
+        delay(200);
+        digitalWrite(boardLed, LOW);
+        delay(200);
+
+}
